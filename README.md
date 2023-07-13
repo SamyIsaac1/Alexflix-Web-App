@@ -7,7 +7,7 @@
 
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Millions of movies, TV shows, Animes and their wonderful products
     <br />
     <a href="/Documentation.pdf"><strong>Explore the docs »</strong></a>
     <br />

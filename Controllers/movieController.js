@@ -30,6 +30,7 @@ exports.addNewMovie = async function (request, response, next) {
       production_year,
       trailer,
       poster_image,
+      cover_image,
       videos,
       description,
     } = request.body;
@@ -49,6 +50,7 @@ exports.addNewMovie = async function (request, response, next) {
       production_year,
       trailer,
       poster_image,
+      cover_image,
       videos,
       description,
     });

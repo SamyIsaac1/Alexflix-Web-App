@@ -37,6 +37,11 @@ export const trailer = yup
   .string()
   .url("trailer must be a valid URL")
   .required("trailer should be String");
+  export const cover = yup
+  .string()
+  .url("cover must be a valid URL")
+  .required("cover should be String");
+
 export const poster = yup
   .string()
   .url("Poster must be a valid URL")

@@ -143,28 +143,28 @@ Once the server is running, you can access Task App by opening your web browser 
 - Login 
 ![](./images/login.jpg)
 
-- Home page where you can add, delete, update your Tasks.
+- Home page.
 ![](./images/Home.jpg)
 
 - Watch your favorite movie, series, and anime.
 ![](./images/stream.jpg)
 
-- Shopping you favorite movie's product usinh our store.
+- Shopping for your favorite movie's products using our store.
 ![](./images/store.jpg)
 
 - Make an Order.
 ![](./images/order.jpg)
 
-- Admin DashBoard.
+- Admin Dashboard.
 ![](./images/admin.jpg)
 
 <!-- ROADMAP -->
 ## Development Process
 
 
-**Project Setup**: Started by setting up my development environment. Installed the necessary tools and frameworks such as Node.js, mongodb , and any additional libraries or dependencies required for my web app.
+**Project Setup**: Started by setting up my development environment. Installed the necessary tools and frameworks such as Node.js, MongoDB, and any additional libraries or dependencies required for my web app.
 
-**Planning and Requirements Gathering**: Clearly defined the purpose, goals, and target audience of our web app. created a comprehensive plan.
+**Planning and Requirements Gathering**: Clearly defined the purpose, goals, and target audience of our web app. and created a comprehensive plan.
 
 
 **Backend-first Approach**:
@@ -183,16 +183,16 @@ Backend-first Approach because In this approach we can focus on developing and i
 
 
 **Frontend Development Process**:
-- Start search to find an inspiring design.
+- Start searching to find an inspiring design.
 - Implement using html and css and bootstrap
 - convert it to react components
 ![React Tree](./images/React%20Tree.jpg) 
-- Add Login , Register pages
+- Add Login, Register pages
 - Admin has a Dashboard for
-  - Add, Delete, update user, products,movies,orders, and products  
+  - Add, Delete, update user, products,movies, orders, and products  
 
 - User
-  - Watch movie, series, and Anime.
+  - Watch movies, series, and Anime.
   - Add favorites
   - Write, update, delete review
   - Shopping from our store for products related to movies, series, and anime.

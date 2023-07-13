@@ -21,7 +21,7 @@ export default function MoviesModule(props) {
 
   const handleInputChange = (inputValue, callback) => {
     if (inputValue)
-      searchProduct(inputValue).then((data) => {
+      searchProduct({name:inputValue}).then((data) => {
         if (data?.message) callback(productListForm(data.products));
       });
     else {

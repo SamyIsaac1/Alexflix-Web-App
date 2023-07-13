@@ -128,7 +128,12 @@ exports.searchMovie = async function (request, response, next) {
         query[key] = { $regex: request.query[key], $options: "i" };
     }
 
-    let movies = await Movie.find(query);
+    let movies = await Movie.find(query).populate([
+      {
+        path: "products",
+        select: { name: 1, images: 1 },
+      },
+    ]);;
 
     if (movies.length == 0) throw new Error("No Movies exist");
     response.status(200).json({ message: "Done", data: movies });

@@ -38,7 +38,7 @@ export default function AddMovie() {
     setSelectCheck(true);
   };
   const handleSearch = (e) => {
-    searchProduct(e.target.value).then((data) => {
+    searchProduct({name:e.target.value}).then((data) => {
       if (data?.message) setProductListSearch(data.products);
     });
   };

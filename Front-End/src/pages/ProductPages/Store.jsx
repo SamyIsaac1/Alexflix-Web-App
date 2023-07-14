@@ -86,6 +86,7 @@ export default function Store() {
   }
 
   if (!allProducts) {
+    console.log(allProducts)
     return <FullScreenLoader />;
   }
   let nums = new Array(totalPages).fill(1).map((el, i) => i + 1);

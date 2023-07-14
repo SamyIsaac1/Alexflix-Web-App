@@ -4,6 +4,7 @@ import { getProductById } from "../../api/apiEcommerce";
 import { useDispatch } from "react-redux";
 import { addToCart } from "./../../store/Slice/cart";
 import FullScreenLoader from "./../../components/FullScreenLoader";
+import Swal from "sweetalert2";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState(null);
@@ -118,6 +119,12 @@ export default function ProductDetails() {
               dispatch(
                 addToCart({ ...product, quantity, image: imgRef.current.src })
               );
+              Swal.fire({
+                icon: 'success',
+                title: 'Product added to cart',
+                showConfirmButton: false,
+                timer: 1500
+              })
             }}
           >
             <i class="fa-solid fa-cart-plus"></i> Add To Cart

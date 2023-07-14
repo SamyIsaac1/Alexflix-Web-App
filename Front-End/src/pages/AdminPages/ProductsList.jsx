@@ -95,7 +95,7 @@ export default function ProductsList() {
         }
       });
     }
-  }, []);
+  }, [searchParams]);
 
   return (
     <>

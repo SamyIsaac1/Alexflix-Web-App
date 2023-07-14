@@ -23,6 +23,7 @@ export function MovieCard({ movie, isFav, type }) {
   const handleAddToCart = function (e) {
     if (localStorage.getItem("token")) {
       e.stopPropagation();
+      if (movie.available === 0) return;
       if (inCart) setInCart(false);
       else setInCart(true);
       let obj = { ...movie, quantity: 1 };
@@ -134,13 +135,18 @@ export function MovieCard({ movie, isFav, type }) {
         </div>
         <img
           src={movie.poster_image || movie.images[0].secure_url}
-          className="card-img-top rounded-4"
+          className="card-img-top rounded-4 sold-rel"
           alt="..."
         />
       </div>
       <div className="card-body p-2">
         <h5 className="card-text text-center my-0">{movie.name}</h5>
       </div>
+      {type === "product" && movie.available === 0 ? (
+        <span className=" sold-out">Sold Out</span>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

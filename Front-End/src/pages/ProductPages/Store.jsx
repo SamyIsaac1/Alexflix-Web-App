@@ -86,7 +86,7 @@ export default function Store() {
   }
 
   if (!allProducts) {
-    console.log(allProducts)
+    console.log(allProducts);
     return <FullScreenLoader />;
   }
   let nums = new Array(totalPages).fill(1).map((el, i) => i + 1);
@@ -146,7 +146,7 @@ export default function Store() {
           </select>
         </div>
       </section>
-      <section id="product1" className="section-p1">
+      <section id="product1" className="section-p1 ">
         <div className="pro-container">
           {allProducts.length > 0 &&
             allProducts?.map((product) => {
@@ -164,7 +164,7 @@ export default function Store() {
                   />
                   <div className="des">
                     <span className="mb-1">{product.category}</span>
-                    <h5 className="m-0">{product.name}</h5>
+                    <h5 className="m-0">{product.name} </h5>
                     <div className="star">
                       <i className="fa-solid fa-star"></i>
                       <i className="fa-solid fa-star"></i>
@@ -178,6 +178,7 @@ export default function Store() {
                     href=""
                     className="cart-icon"
                     onClick={() => {
+                      if (product.available === 0) return;
                       let obj = { ...product, quantity: 1 };
                       dispatch(toggleProductFromCart(obj));
                     }}
@@ -188,6 +189,11 @@ export default function Store() {
                       <i className="fa-solid fa-cart-plus cart"></i>
                     )}
                   </span>
+                  {product.available === 0 ? (
+                    <span className="sold-out   "> Sold Out</span>
+                  ) : (
+                    ""
+                  )}
                 </div>
               );
             })}

@@ -1,19 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { NavAuth } from "../NavAuth  Component/NavAuth";
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle";
 import logo from "../../../assets/images/logo trans2.png";
 import "./nav.css";
 import { PopUpMsg } from "../../../api/apiStream";
+import { removeAllFromCart } from "../../../store/Slice/cart";
 export function Nav({ positionStyle }) {
+  const dispatch = useDispatch();
   const navCollapseScreen = 992;
   const navbar = useRef();
   const toggler = useRef();
   const [isloggedIn, setIsloggedIn] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const totalInCart = useSelector((state) => state.cart.total);
-  const linkClickHandle = (e)=>{
+  const linkClickHandle = (e) => {
     window.scrollTo(0, 0);
     if (
       window.innerWidth <= navCollapseScreen &&
@@ -22,7 +24,7 @@ export function Nav({ positionStyle }) {
       let bsCollapse = new bootstrap.Collapse(navbar.current);
       bsCollapse.hide();
     }
-  }
+  };
   const linkClickHandleWithGuestCheck = (e) => {
     if (localStorage.getItem("token")) {
       linkClickHandle(e);
@@ -33,6 +35,8 @@ export function Nav({ positionStyle }) {
   };
   const signOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("cart");
+    dispatch(removeAllFromCart());
   };
   useEffect(() => {
     //check if it's a logged in user
